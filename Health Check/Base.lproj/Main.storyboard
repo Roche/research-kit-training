@@ -16,9 +16,47 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxU-8n-nQr">
+                                <rect key="frame" x="258" y="114" width="85" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="M4L-gm-X50"/>
+                                    <constraint firstAttribute="height" constant="85" id="hG8-ar-VW3"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="ear"/>
+                                <connections>
+                                    <action selector="toneAudiometryButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XuA-pF-IPR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check your hearing using Tone Audiometry Test" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlj-7X-Ujc">
+                                <rect key="frame" x="0.0" y="222" width="600" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="GWh-sj-Z3O"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rlj-7X-Ujc" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="OxC-2F-rRN"/>
+                            <constraint firstItem="lxU-8n-nQr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="Vbn-pW-Zs0"/>
+                            <constraint firstItem="rlj-7X-Ujc" firstAttribute="top" secondItem="lxU-8n-nQr" secondAttribute="bottom" constant="23" id="a6c-N4-tQb"/>
+                            <constraint firstAttribute="trailing" secondItem="rlj-7X-Ujc" secondAttribute="trailing" id="e0a-pf-p3m"/>
+                            <constraint firstItem="rlj-7X-Ujc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="h7b-C1-Zf4"/>
+                            <constraint firstItem="lxU-8n-nQr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yLd-oE-XPm"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="OxC-2F-rRN"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Health Check" id="7fu-uT-2aT"/>
+                    <connections>
+                        <outlet property="toneAudiometryButton" destination="lxU-8n-nQr" id="dn1-ye-SbY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -43,4 +81,7 @@
             <point key="canvasLocation" x="336" y="997"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ear" width="85" height="85"/>
+    </resources>
 </document>
