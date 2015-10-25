@@ -18,7 +18,7 @@ class ResultsTableViewController: UITableViewController {
 
     private var results:[Result]?
     
-    required convenience init(results:[Result]) {
+    required convenience init(results:[Result]?) {
         self.init(style:.Plain)
         self.results = results
     }

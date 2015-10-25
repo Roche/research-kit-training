@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         //Create toneAudiometryTask(ORKOrderedTask) and display it using ORKTaskViewController
         let toneTask = ORKOrderedTask.toneAudiometryTaskWithIdentifier("toneAudiometry", intendedUseDescription: nil, speechInstruction: nil, shortSpeechInstruction: nil, toneDuration: 5, options: ORKPredefinedTaskOption.None)
         let taskVC = ORKTaskViewController(task: toneTask, taskRunUUID: nil)
-        
+        taskVC.delegate = self
         presentViewController(taskVC, animated: true, completion: nil)
     }
 
@@ -55,4 +55,32 @@ class ViewController: UIViewController {
 // Task 3: 
 //Catch results of task in ORKTaskViewControllerDelegate's didFinishWithReason method. Implement delegate method in extension - Swifty way ;)
 
-
+extension ViewController: ORKTaskViewControllerDelegate{
+    func taskViewController(taskViewController: ORKTaskViewController, didFinishWithReason reason: ORKTaskViewControllerFinishReason, error: NSError?) {
+        
+        guard reason == .Completed, let results = taskViewController.result.results as? [ORKStepResult] else {
+            dismissViewControllerAnimated(true, completion: nil)
+            return
+        }
+        
+        var finalResults: [Result]?
+        for stepResult in results{
+            guard let stepResultResults = stepResult.results else{ continue }
+            for toneResult in stepResultResults{
+                if let toneResult = toneResult as? ORKToneAudiometryResult {
+                    print(toneResult.samples)
+                    let samples = toneResult.samples as [ORKToneAudiometrySample]?
+                    finalResults = samples?.map({ (sample) -> Result in
+                        let ear = (sample.channel == .Right) ? "Right ear" : "Left ear"
+                        return Result(title:"\(sample.frequency)Hz, \(ear)", detail:"Heard at amplitude: \(round(sample.amplitude*10000)/10000)", success:true)
+                    })
+                }
+            }
+        }
+        
+        dismissViewControllerAnimated(true) { [unowned self]() -> Void in
+            let resultsVC = UINavigationController(rootViewController: ResultsTableViewController(results: finalResults))
+            self.presentViewController(resultsVC, animated: true, completion: nil)
+        }
+    }
+}
