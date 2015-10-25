@@ -34,6 +34,10 @@ class ViewController: UIViewController {
         
         //Task 2: 
         //Create toneAudiometryTask(ORKOrderedTask) and display it using ORKTaskViewController
+        let toneTask = ORKOrderedTask.toneAudiometryTaskWithIdentifier("toneAudiometry", intendedUseDescription: nil, speechInstruction: nil, shortSpeechInstruction: nil, toneDuration: 5, options: ORKPredefinedTaskOption.None)
+        let taskVC = ORKTaskViewController(task: toneTask, taskRunUUID: nil)
+        
+        presentViewController(taskVC, animated: true, completion: nil)
     }
 
     @IBAction func consentButtonTapped(sender: AnyObject) {
