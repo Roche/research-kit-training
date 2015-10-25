@@ -10,6 +10,7 @@ import UIKit
 
 //Task 1: 
 //Import ResearchKit & Build Project
+import ResearchKit
 
 class ViewController: UIViewController {
 
