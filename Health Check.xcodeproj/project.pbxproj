@@ -12,6 +12,8 @@
 		900533F21BDBE98800580D86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900533F01BDBE98800580D86 /* Main.storyboard */; };
 		900533F41BDBE98800580D86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 900533F31BDBE98800580D86 /* Assets.xcassets */; };
 		900533F71BDBE98800580D86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900533F51BDBE98800580D86 /* LaunchScreen.storyboard */; };
+		900533FF1BDD46AA00580D86 /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900533FE1BDD46AA00580D86 /* ResultsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		900534011BDD4D3300580D86 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900534001BDD4D3300580D86 /* ResultTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		900533F31BDBE98800580D86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		900533F61BDBE98800580D86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		900533F81BDBE98800580D86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		900533FE1BDD46AA00580D86 /* ResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
+		900534001BDD4D3300580D86 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				900533F31BDBE98800580D86 /* Assets.xcassets */,
 				900533F51BDBE98800580D86 /* LaunchScreen.storyboard */,
 				900533F81BDBE98800580D86 /* Info.plist */,
+				900533FE1BDD46AA00580D86 /* ResultsTableViewController.swift */,
+				900534001BDD4D3300580D86 /* ResultTableViewCell.swift */,
 			);
 			path = "Health Check";
 			sourceTree = "<group>";
@@ -134,7 +140,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				900533FF1BDD46AA00580D86 /* ResultsTableViewController.swift in Sources */,
 				900533EF1BDBE98800580D86 /* ViewController.swift in Sources */,
+				900534011BDD4D3300580D86 /* ResultTableViewCell.swift in Sources */,
 				900533ED1BDBE98800580D86 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

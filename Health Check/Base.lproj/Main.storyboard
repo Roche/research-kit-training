@@ -37,24 +37,52 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMw-Lk-aPh">
+                                <rect key="frame" x="255" y="322" width="90" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="h9m-eh-HWZ"/>
+                                    <constraint firstAttribute="width" constant="90" id="rmf-lk-XhJ"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="hanoi"/>
+                                <connections>
+                                    <action selector="hanoiButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BV9-2V-4Vd"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check your problem solving skills with Hanoi Towers" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcK-A3-SZu">
+                                <rect key="frame" x="0.0" y="408" width="594" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="JlX-Ih-12B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="bcK-A3-SZu" secondAttribute="trailing" constant="6" id="73G-5G-pZW"/>
+                            <constraint firstItem="bcK-A3-SZu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HhB-sl-avE"/>
+                            <constraint firstItem="bcK-A3-SZu" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Lyz-5L-3QC"/>
                             <constraint firstItem="rlj-7X-Ujc" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="OxC-2F-rRN"/>
                             <constraint firstItem="lxU-8n-nQr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="Vbn-pW-Zs0"/>
                             <constraint firstItem="rlj-7X-Ujc" firstAttribute="top" secondItem="lxU-8n-nQr" secondAttribute="bottom" constant="23" id="a6c-N4-tQb"/>
                             <constraint firstAttribute="trailing" secondItem="rlj-7X-Ujc" secondAttribute="trailing" id="e0a-pf-p3m"/>
                             <constraint firstItem="rlj-7X-Ujc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="h7b-C1-Zf4"/>
+                            <constraint firstItem="NMw-Lk-aPh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jg3-OQ-Gig"/>
+                            <constraint firstItem="NMw-Lk-aPh" firstAttribute="top" secondItem="rlj-7X-Ujc" secondAttribute="bottom" constant="30" id="oax-0o-ire"/>
+                            <constraint firstItem="bcK-A3-SZu" firstAttribute="top" secondItem="NMw-Lk-aPh" secondAttribute="bottom" constant="6" id="pTR-DR-2UR"/>
                             <constraint firstItem="lxU-8n-nQr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yLd-oE-XPm"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="OxC-2F-rRN"/>
+                                <exclude reference="Lyz-5L-3QC"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Health Check" id="7fu-uT-2aT"/>
                     <connections>
+                        <outlet property="hanoiButton" destination="NMw-Lk-aPh" id="0q3-dq-rbt"/>
                         <outlet property="toneAudiometryButton" destination="lxU-8n-nQr" id="dn1-ye-SbY"/>
                     </connections>
                 </viewController>
@@ -83,5 +111,6 @@
     </scenes>
     <resources>
         <image name="ear" width="85" height="85"/>
+        <image name="hanoi" width="93" height="46"/>
     </resources>
 </document>
