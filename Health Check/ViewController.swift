@@ -23,11 +23,6 @@ class ViewController: UIViewController {
         
         //Uncomment for Task 4:
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Compose, target: self, action: Selector("consentButtonTapped:"))
-        
-        //Remove for bonus task
-        hanoiButton.enabled = false
-        hanoiButton.alpha = 0.0
-        
     }
     
     @IBAction func toneAudiometryButtonTapped(sender: AnyObject) {
@@ -83,6 +78,11 @@ class ViewController: UIViewController {
     
     @IBAction func hanoiButtonTapped(sender: AnyObject) {
         //Bonus Task
+        let hanoiTask = ORKOrderedTask.towerOfHanoiTaskWithIdentifier("hanoiTower", intendedUseDescription: nil, numberOfDisks: 5, options: ORKPredefinedTaskOption.None)
+
+        let taskVC = ORKTaskViewController(task: hanoiTask, taskRunUUID: nil)
+        taskVC.delegate = self
+        presentViewController(taskVC, animated: true, completion: nil)
     }
 }
 
@@ -101,14 +101,22 @@ extension ViewController: ORKTaskViewControllerDelegate{
         var finalResults: [Result]?
         for stepResult in results{
             guard let stepResultResults = stepResult.results else{ continue }
-            for toneResult in stepResultResults{
-                if let toneResult = toneResult as? ORKToneAudiometryResult {
+            for result in stepResultResults{
+                if let toneResult = result as? ORKToneAudiometryResult {
                     print(toneResult.samples)
                     let samples = toneResult.samples as [ORKToneAudiometrySample]?
                     finalResults = samples?.map({ (sample) -> Result in
                         let ear = (sample.channel == .Right) ? "Right ear" : "Left ear"
                         return Result(title:"\(sample.frequency)Hz, \(ear)", detail:"Heard at amplitude: \(round(sample.amplitude*10000)/10000)", success:true)
                     })
+                }else if let hanoiResult = result as? ORKTowerOfHanoiResult {
+                    print("HANOI Solved \(hanoiResult.puzzleWasSolved), Moves Count: \(hanoiResult.moves?.count ?? 0)")
+                    let solved = Result(title: "Puzzle solved", detail: "", success: hanoiResult.puzzleWasSolved)
+                    let moves = Result(title: "Number of Moves: \(hanoiResult.moves?.count ?? 0)", detail: "", success: hanoiResult.puzzleWasSolved)
+                    finalResults = [solved, moves]
+                }
+                else{
+                    print("No printable results.")
                 }
             }
         }

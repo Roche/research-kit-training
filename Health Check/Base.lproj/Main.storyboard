@@ -48,7 +48,7 @@
                                     <action selector="hanoiButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BV9-2V-4Vd"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check your problem solving skills with Hanoi Towers" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcK-A3-SZu">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check your problem solving skills with Hanoi Towers" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcK-A3-SZu">
                                 <rect key="frame" x="0.0" y="408" width="594" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="JlX-Ih-12B"/>
