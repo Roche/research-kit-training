@@ -1,5 +1,5 @@
 # research-kit-training
-Short training on researchkit framework. Building simple HealthCheck app
+Short Training from Apple ResearchKit Framework, where simple app is created. Training contains instructions and branches per task. Helps to understand Framework mechanics and shows where it speeds up building apps. 
 
 ### Estimated Training time - 1.5-3h
 
@@ -49,3 +49,9 @@ Use headphones to test your hearing :)
 3. Present that ViewController
 
 Have some fun.
+
+## Dependencies 
+
+### Apple ResearchKit 
+http://researchkit.org/
+https://github.com/researchkit/researchkit
