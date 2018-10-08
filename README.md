@@ -1,4 +1,4 @@
-# research-kit-training
+# research-kit-training repository was migrated to internal bitbucket. To get access please contact with Roche DevTools Support
 Short Training from Apple ResearchKit Framework, where simple app is created. Training contains instructions and branches per task. Helps to understand Framework mechanics and shows where it speeds up building apps. 
 
 ### Estimated Training time - 1.5-3h
